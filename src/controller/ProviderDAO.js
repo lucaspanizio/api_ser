@@ -35,7 +35,10 @@ export async function update(id, new_provider) {
       if (err) {
         reject(err.message)
       } else {
-        resolve(data)        
+        resolve({
+          id,
+          message: 'Prestador alterado com sucesso!'
+        })        
       }
     })
   })
@@ -50,7 +53,10 @@ export async function destroy(id){
       if (err) {
         reject(err.message)
       } else {
-        resolve(data)        
+        resolve({
+          id,
+          message: 'Prestador excluído com sucesso!'
+        })       
       }
     })
   })
