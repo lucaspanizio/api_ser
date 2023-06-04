@@ -1,0 +1,574 @@
+{
+	"info": {
+		"_postman_id": "9d9f15ef-15da-450b-af45-3a7dea7d6dbe",
+		"name": "api_ser_collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "8954178"
+	},
+	"item": [
+		{
+			"name": "/provider",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\" : \"Pedrinho Filósofo\",\r\n  \"phone\": \"43999999666\", \r\n  \"email\": \"pedro2@email.com\", \r\n  \"bio\":   \"É só isso, não tem o que dizer.\",\r\n  \"photoImage\": \"Ser ou não ser, eis a question.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/provider"
+			},
+			"response": [
+				{
+					"name": "/provider",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\" : \"Lucas Panizio\",\r\n  \"phone\": \"43999999999\", \r\n  \"email\": \"lucas@email.com\", \r\n  \"bio\":   \"É só isso, não tem o que dizer.\",\r\n  \"photoImage\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/provider"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "53"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"35-UiNTObaur2GPFZLGDlLO3moJAWo\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 04 Jun 2023 00:02:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"message\": \"Prestador incluído com sucesso!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "/provider/:id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\" : \"Panizao\",\r\n  \"email\": \"panizao@email.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/provider/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"provider",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/provider/:id",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\" : \"Panizao\",\r\n  \"email\": \"panizao@email.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/provider/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"provider",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "54"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"36-EAlIJuRyxxwgjs3n8q9Ru08CqJ4\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 04 Jun 2023 04:32:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"3\",\n    \"message\": \"Prestador alterado com sucesso!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "/provider/:id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/provider/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"provider",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/provider/:id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/provider/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"provider",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "55"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"37-54oCI1cAszzndNsvp92u+62NgW4\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 04 Jun 2023 00:05:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"2\",\n    \"message\": \"Prestador excluído com sucesso!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/"
+			},
+			"response": [
+				{
+					"name": "/",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"22-K2J7yloAcBojRCcKwKuHbFzg6cU\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 03 Jun 2023 23:47:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Bem vindo a api_ser!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "/providers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/providers"
+			},
+			"response": [
+				{
+					"name": "/providers",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/providers"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "710"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2c6-rg/Nx++kYfG3JLffFT3nblbvTmE\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 04 Jun 2023 00:03:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Lucas Panizio\",\n        \"phone\": \"43999999999\",\n        \"email\": \"lucas@email.com\",\n        \"bio\": \"É só isso, não tem o que dizer.\",\n        \"photoimage\": \"\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Eduardo Dubadoo\",\n        \"phone\": \"43999999988\",\n        \"email\": \"eduardo@email.com\",\n        \"bio\": \"Do neida, asmei\",\n        \"photoimage\": \"\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Carolzinha Zika\",\n        \"phone\": \"43999999777\",\n        \"email\": \"carol@email.com\",\n        \"bio\": \"Sem comentários\",\n        \"photoimage\": \"\"\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Gabi Vida Loka\",\n        \"phone\": \"43999999666\",\n        \"email\": \"gabi@email.com\",\n        \"bio\": \"Não falo nada, e digo mais, isso é tudo.\",\n        \"photoimage\": \"\"\n    },\n    {\n        \"id\": 5,\n        \"name\": \"Pedrinho Filósofo\",\n        \"phone\": \"43999999666\",\n        \"email\": \"pedro@email.com\",\n        \"bio\": \"É só isso, não tem o que dizer.\",\n        \"photoimage\": \"Ser ou não ser, eis a question.\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "/provider/:id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/provider/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"provider",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/provider/:id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/provider/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"provider",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "175"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"af-Xkj8NM6rIBlLxraPWFq7gOzvCYw\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 04 Jun 2023 00:03:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 5,\n    \"name\": \"Pedrinho Filósofo\",\n    \"phone\": \"43999999666\",\n    \"email\": \"pedro@email.com\",\n    \"bio\": \"É só isso, não tem o que dizer.\",\n    \"photoimage\": \"Ser ou não ser, eis a question.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "/provider",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"lucas\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/provider"
+			},
+			"response": [
+				{
+					"name": "/provider",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"lucas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/provider"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "140"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"8c-8Ixmx5p5VQamfvvahT2wWZ1WmIA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 04 Jun 2023 00:04:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Lucas Panizio\",\n        \"phone\": \"43999999999\",\n        \"email\": \"lucas@email.com\",\n        \"bio\": \"É só isso, não tem o que dizer.\",\n        \"photoimage\": \"\"\n    }\n]"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
