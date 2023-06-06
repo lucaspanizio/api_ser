@@ -33,20 +33,26 @@ export async function insert(provider) {
 // Altera o prestador pelo id
 export async function update(id, new_provider) {
   return new Promise((resolve, reject) => {
-    let query = "update providers set";
-    for (let key in new_provider) {
-      query += ` ${key} = '${new_provider[key]}',`;
-    }
-    query = query.slice(0, -1) + ` where id = ${id}`;
+    getById(id).then((data) => {
+      if (data.id) {
+        let query = "update providers set";
+        for (let key in new_provider) {
+          query += ` ${key} = '${new_provider[key]}',`;
+        }
+        query = query.slice(0, -1) + ` where id = ${id}`;
 
-    db.run(query, (err, data) => {
-      if (err) {
-        reject(err.message);
-      } else {
-        resolve({
-          id,
-          message: "Prestador alterado com sucesso!",
+        db.run(query, (err) => {
+          if (err) {
+            reject(err.message);
+          } else {
+            resolve({
+              id,
+              message: "Prestador alterado com sucesso!",
+            });
+          }
         });
+      } else {
+        resolve([]);
       }
     });
   });
@@ -55,16 +61,22 @@ export async function update(id, new_provider) {
 // Remove o prestador pelo id
 export async function destroy(id) {
   return new Promise((resolve, reject) => {
-    let query = `delete from providers where id = ${id}`;
+    getById(id).then((data) => {
+      if (data.id) {
+        let query = `delete from providers where id = ${id}`;
 
-    db.run(query, (err, data) => {
-      if (err) {
-        reject(err.message);
-      } else {
-        resolve({
-          id,
-          message: "Prestador excluído com sucesso!",
+        db.run(query, (err) => {
+          if (err) {
+            reject(err.message);
+          } else {
+            resolve({
+              id,
+              message: "Prestador excluído com sucesso!",
+            });
+          }
         });
+      } else {
+        resolve([]);
       }
     });
   });
@@ -79,7 +91,7 @@ export async function getById(id) {
       if (err) {
         reject(err.message);
       } else {
-        resolve(data);
+        resolve(data ?? []);
       }
     });
   });
