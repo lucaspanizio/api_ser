@@ -103,7 +103,7 @@ export async function getByName(name) {
     let params = ["%" + name.toLowerCase() + "%"];
     let query = "select * from providers where name like ?";
 
-    db.get(query, params, (err, data) => {
+    db.all(query, params, (err, data) => {
       if (err) {
         reject(err.message);
       } else {
