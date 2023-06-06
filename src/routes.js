@@ -42,18 +42,18 @@ router.delete(`${BASE_REQ}/:id`, (req, res) => {
     .catch((err) => res.status(400).json({ error: err }));
 });
 
-// Consulta pelo id
-router.get(`${BASE_REQ}/:id`, (req, res) => {
-  let id = req.params.id;
-  getById(id)
-    .then((data) => res.status(200).json(data))
-    .catch((err) => res.status(400).json({ error: err }));
-});
-
 // Consulta por trecho do nome
 router.get(`${BASE_REQ}/search`, (req, res) => {
   let name = req.query.name;
   getByName(name)
+    .then((data) => res.status(200).json(data))
+    .catch((err) => res.status(400).json({ error: err }));
+});
+
+// Consulta pelo id
+router.get(`${BASE_REQ}/:id`, (req, res) => {
+  let id = req.params.id;
+  getById(id)
     .then((data) => res.status(200).json(data))
     .catch((err) => res.status(400).json({ error: err }));
 });

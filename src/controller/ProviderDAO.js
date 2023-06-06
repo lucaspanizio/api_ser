@@ -100,14 +100,14 @@ export async function getById(id) {
 // Retorna todos os prestadores por trecho do nome
 export async function getByName(name) {
   return new Promise((resolve, reject) => {
-    let params = ["%" + name.toUpperCase() + "%"];
-    let query = "select * from providers where upper(name) like ?";
+    let params = ["%" + name.toLowerCase() + "%"];
+    let query = "select * from providers where name like ?";
 
     db.get(query, params, (err, data) => {
       if (err) {
         reject(err.message);
       } else {
-        resolve(data);
+        resolve(data ?? []);
       }
     });
   });
