@@ -4,7 +4,7 @@ import { db } from "../configDB.js";
 export async function insert(provider) {
   return new Promise((resolve, reject) => {
     let query =
-      "insert into providers (name, cpf, phone, email, bio, photoimage) values (?,?,?,?,?,?)";
+      "insert into providers (name, cpf, phone, email, bio, profilePic) values (?,?,?,?,?,?)";
     let params = [
       provider.name,
       provider.cpf,
